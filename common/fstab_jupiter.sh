@@ -1,12 +1,13 @@
 #/bin/sh
 
-sudo pacman -S cifs-utils
+#sudo pacman -S cifs-utils
 
+mkdir $HOME/.smb
 echo "Samba user credentials"
 read -p "Username:   " username
 read -p "Password:   " password
-	echo username="$username" >$HOME/.smb/credentials
-	echo password="$password" >>$HOME/.smb/credentials
+echo username="$username" >$HOME/.smb/credentials
+echo password="$password" >>$HOME/.smb/credentials
 echo "$HOME/.smb/credentials:"
 more $HOME/.smb/credentials
 sudo chown root ~/.smb/credentials
